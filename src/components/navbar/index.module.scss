@@ -1,0 +1,21 @@
+.Navbar {
+  padding: 20px;
+  background-color: $primary-color;
+  box-shadow: 4px 4px 4px;
+
+  .wrapper {
+    @include flex(row, 50px, nowrap, flex-end);
+
+    li {
+      color: $impression-color;
+      font-weight: $font-weight-medium;
+      cursor: pointer;
+      transition: transform 0.35s;
+
+      &:hover {
+        transform: scale(1.2);
+        color: $secundary-color-light;
+      }
+    }
+  }
+}
