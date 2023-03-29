@@ -3,6 +3,7 @@
   background-color: $primary-color;
   box-shadow: 4px 4px 4px;
   z-index: 10;
+
   .wrapper {
     @include flex(row, 50px, nowrap, flex-end);
 

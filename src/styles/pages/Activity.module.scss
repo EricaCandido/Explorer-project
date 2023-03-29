@@ -1,7 +1,7 @@
 .Activity {
   // height: 100vh; ///PROVVISORIO
   @include flex(column, 20px, nowrap, center, flex-start);
-  z-index: 2;
+
   .category {
     font-weight: $font-weight-bold;
   }

@@ -6,7 +6,7 @@
   width: 100%;
   background-color: $secundary-color;
   box-shadow: 4px 0px 4px 4px;
-  z-index: 10;
+  position: relative;
 
   p {
     text-align: right;

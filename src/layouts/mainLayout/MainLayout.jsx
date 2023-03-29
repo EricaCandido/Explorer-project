@@ -7,13 +7,12 @@ const MainLayout = () => {
     <div className={styles.MainLayout}>
       <Navbar />
       <div className={styles.bg}></div>
+      <div className={styles.bgSmall}></div>
       <section className={styles.children}>
         <Outlet />
       </section>
-      <div className={styles.bgSmall}></div>
-      <div className={styles.footer}>
-        <Footer />
-      </div>
+
+      <Footer />
     </div>
   );
 };
