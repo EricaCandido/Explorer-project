@@ -14,12 +14,12 @@
 }
 
 //MEDIA QUERY
-$mobile: 0px;
+$mobile: 328px;
 $tablet: 768px;
 $desktop: 1024px;
 
 //PROVVISORIO
-@media screen and (max-width:#{$tablet - 1}) {
+@media screen and (max-width:#{$mobile}) {
   h1,
   h2,
   h3,
@@ -28,12 +28,12 @@ $desktop: 1024px;
   h6,
   p,
   li {
-    font-size: small;
+    font-size: 0.8rem;
   }
 }
 
 //PROVVISORIO
-@media screen and (max-width:#{$tablet - 1}) {
+@media screen and (max-width:#{$tablet}) {
   h1,
   h2,
   h3,
@@ -41,6 +41,6 @@ $desktop: 1024px;
   h5,
   h6,
   p {
-    font-size: smaller;
+    font-size: 0.9rem;
   }
 }

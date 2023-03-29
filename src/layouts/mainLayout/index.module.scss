@@ -1,0 +1,25 @@
+.MainLayout {
+  // .bg {
+  //   width: 400px;
+  //   height: 400px;
+  //   background-color: $secundary-color-light;
+  //   position: fixed;
+
+  //   transform: rotate(45deg);
+  //   z-index: 0;
+  // }
+  // .bgSmall {
+  //   width: 200px;
+  //   height: 200px;
+  //   background-color: $secundary-color-dark;
+  //   position: fixed;
+  //   right: 0;
+  //   top: 50vh;
+  //   transform: rotate(45deg);
+  //   z-index: 0;
+  // }
+  .children {
+    padding: 50px;
+    position: relative;
+  }
+}

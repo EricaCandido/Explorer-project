@@ -1,0 +1,38 @@
+.Id {
+  @include flex(row, 20px);
+
+  img {
+    width: 400px;
+  }
+  .text {
+    @include flex(column, 20px, no wrap, center, flex-start);
+    position: relative;
+    width: 400px;
+
+    .category {
+      background-color: $secundary-color-light;
+      padding: 5px;
+      box-shadow: 4px 4px 4px 0.5px;
+      cursor: pointer;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: $font-weight-medium;
+      background-color: $secundary-color;
+      padding: 5px;
+      box-shadow: 4px 4px 4px;
+      position: absolute;
+      bottom: -40%;
+      right: 10px;
+      cursor: pointer;
+      transition: transform (0.35s);
+      width: 120px;
+      text-align: center;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}

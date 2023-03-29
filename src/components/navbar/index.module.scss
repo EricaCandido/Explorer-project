@@ -2,11 +2,12 @@
   padding: 20px;
   background-color: $primary-color;
   box-shadow: 4px 4px 4px;
-
+  z-index: 10;
   .wrapper {
     @include flex(row, 50px, nowrap, flex-end);
 
     li {
+      font-size: $font-size-base;
       color: $impression-color;
       font-weight: $font-weight-medium;
       cursor: pointer;
