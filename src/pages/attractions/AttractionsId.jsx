@@ -1,11 +1,11 @@
-import styles from "../../styles/pages/Id.module.scss";
+import styles from "../../styles/pages/AttractionsId.module.scss";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GET } from "../../utils/http";
 import { Link } from "react-router-dom";
 import { results } from "../../utils/mocks/attractions";
 
-export default function () {
+export default function AttractionsId() {
   const { id } = useParams();
   const [dataItem, setDataItem] = useState(results[0]);
 
@@ -16,7 +16,7 @@ export default function () {
   // }, []);
 
   return (
-    <div className={styles.Id}>
+    <div className={styles.AttractionsId}>
       {console.log(dataItem)}
       <img src={dataItem.image.url} alt={dataItem.name} />
       <div className={styles.text}>

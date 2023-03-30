@@ -1,22 +1,35 @@
 import styles from "./index.module.scss";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Card = ({ data }) => {
+const Card = ({ data, route }) => {
   const navigate = useNavigate();
 
   const onHandleClick = () => {
-    navigate(`/activity/${data.id}`);
+    navigate(`${route}/${data.name}`);
   };
-
   return (
     <div className={styles.Card}>
-      <img src={data.image} alt={data.title} />
+      {/* <img src={data.image.url} alt={data.image.caption} /> */}
+      <img
+        src={`https://streetviewhub.com/shots?${Math.floor(
+          Math.random() * 20
+        )}`}
+        alt={data.image.caption}
+      />
       <div className={styles.text}>
         <h3 onClick={onHandleClick} className={styles.title}>
-          {data.title.slice(0, 20)}
+          {data.name}
         </h3>
-        <p>{data.description.slice(0, 100)}...</p>
-        <p className={styles.price}>{data.price} $</p>
+        <b>Tags:</b>
+        <p className={styles.tags}>
+          {data.tags.map((tag, i) => (
+            <li key={i}>{tag}</li>
+          ))}
+        </p>
+        <p className={styles.officialSite}>
+          <Link to={data.url}>Official site</Link>
+        </p>
       </div>
     </div>
   );

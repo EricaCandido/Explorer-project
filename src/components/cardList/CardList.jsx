@@ -1,10 +1,10 @@
 import styles from "./index.module.scss";
 import Card from "../card";
-const CardList = ({ dataList }) => {
+const CardList = ({ dataList, route }) => {
   return (
     <div className={styles.CardList}>
-      {dataList.map((item) => (
-        <Card data={item} />
+      {dataList.map((item, i) => (
+        <Card data={item} key={i} route={route} />
       ))}
     </div>
   );

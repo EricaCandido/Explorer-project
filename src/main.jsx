@@ -1,7 +1,8 @@
 import React from "react";
 import App from "./pages/App";
 import About from "./pages/About";
-import City from "./pages/City";
+import Attractions from "./pages/attractions/Attractions";
+import AttractionsId from "./pages/attractions/AttractionsId";
 import Activity from "./pages/activities/Activity";
 import Id from "./pages/activities/Id";
 import "./index.module.scss";
@@ -20,9 +21,10 @@ const router = createBrowserRouter(
     <Route element={<MainLayout />}>
       <Route path="/" element={<App />} />
       <Route path="about" element={<About />} />
-      <Route path="activity" element={<Activity />} />
-      <Route path="activity/:id" element={<Id />} />
-      <Route path="city/:id" element={<City />} />
+      <Route path="activities" element={<Activity />} />
+      <Route path="activities/:id" element={<Id />} />
+      <Route path="attractions" element={<Attractions />} />
+      <Route path="attractions/:id" element={<AttractionsId />} />
     </Route>
   )
 );

@@ -9,13 +9,15 @@ export default function Activity() {
   const [dataList, setDataList] = useState([]);
 
   useEffect(() => {
-    GET("https://fakestoreapi.com/products").then((data) => setDataList(data));
+    GET("https://failteireland.azure-api.net/opendata-api/v1/activities").then(
+      (data) => setDataList(data.results)
+    );
   }, []);
 
   return (
     <div className={styles.Activity}>
       <h3 className={styles.category}>Activities</h3>
-      <CardList dataList={dataList} />
+      <CardList dataList={dataList} route={"/activities"} />
     </div>
   );
 }
