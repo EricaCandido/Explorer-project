@@ -1,3 +1,74 @@
 .App {
-  height: 100vh; ///PROVVISORIO
+  @include flex(column, 20px);
+  .header {
+    width: 100%;
+    @include flex(row);
+    .generalTitle {
+      width: 100%;
+      text-align: left;
+      font-weight: $font-weight-bold;
+    }
+    form {
+      @include flex(row);
+      box-shadow: 4px 4px 4px;
+      cursor: pointer;
+      input {
+        border: none;
+        outline: none;
+        padding: 5px;
+      }
+    }
+  }
+  .intro,
+  .culture,
+  .people {
+    @include flex(row, 20px, nowrap, center, flex-start);
+    background-color: rgba(255, 255, 255, 0.485);
+    position: relative;
+    padding: 20px;
+  }
+
+  .text {
+    width: 60%;
+    // height: 100%;
+    padding: 10px;
+    @include flex(column, 20px);
+
+    .title {
+      font-weight: $font-weight-bold;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+  .homeImg {
+    height: 100%;
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .App {
+    .intro,
+    .culture,
+    .people {
+      @include flex(row, 20px, wrap);
+    }
+
+    .text {
+      width: 100%;
+    }
+
+    .homeImg {
+      width: 380px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .App {
+    .homeImg {
+      width: 300px;
+    }
+  }
 }

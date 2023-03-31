@@ -1,3 +1,9 @@
 .CardList {
   @include flex(row, 20px, wrap);
 }
+
+// @media screen and (max-width: $mobile) {
+//   .CardList {
+//     @include flex(row, 10px);
+//   }
+// }

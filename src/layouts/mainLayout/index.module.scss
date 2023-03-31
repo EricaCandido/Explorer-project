@@ -8,7 +8,7 @@
   }
   .children {
     position: relative;
-    padding: 50px 50px 400px 50px;
+    padding: 50px;
   }
   .bgSmall {
     width: 200px;
@@ -18,5 +18,14 @@
     right: 0;
     top: 50vh;
     transform: rotate(45deg);
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .MainLayout {
+    .children {
+      box-sizing: border-box;
+      padding: 50px 20px;
+    }
   }
 }

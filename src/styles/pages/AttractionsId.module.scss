@@ -36,3 +36,20 @@
     }
   }
 }
+@media screen and (max-width: $tablet) {
+  .AttractionsId {
+    @include flex(column, 20px, nowrap, center, flex-start);
+
+    img {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  .AttractionsId {
+    img {
+      width: 250px;
+    }
+  }
+}

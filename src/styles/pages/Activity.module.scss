@@ -4,5 +4,17 @@
 
   .category {
     font-weight: $font-weight-bold;
+    padding: 20px;
+  }
+  .backBtn {
+    font-size: 2rem;
+  }
+  .noMatchSection {
+    .noMatchSectionText {
+      @include flex(row, 0, nowrap, space-between);
+    }
+    .nomatchImg {
+      max-width: 500px;
+    }
   }
 }
