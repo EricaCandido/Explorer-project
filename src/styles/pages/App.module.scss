@@ -67,8 +67,15 @@
 
 @media screen and (max-width: $mobile) {
   .App {
+    .header {
+      @include flex(column, 10px);
+
+      .generalTitle {
+        text-align: center;
+      }
+    }
     .homeImg {
-      width: 300px;
+      width: 200px;
     }
   }
 }

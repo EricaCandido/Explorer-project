@@ -2,6 +2,7 @@ import styles from "../styles/pages/App.module.scss";
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "../components/loader/Loader";
 
 export default function App() {
   const [inputValue, setInputValue] = useState("");
@@ -16,6 +17,7 @@ export default function App() {
   };
   return (
     <div className={styles.App}>
+      <Loader />
       <div className={styles.header}>
         <h1 className={styles.generalTitle}>Ireland</h1>
         <form onSubmit={onHandleSubmit}>

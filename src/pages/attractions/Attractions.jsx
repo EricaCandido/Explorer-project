@@ -14,6 +14,7 @@ export default function Attractions() {
 
   return (
     <div className={styles.Attractions}>
+      <h3 className={styles.generalTitle}>Attractions</h3>
       <CardList dataList={attractionsList} route={"/attractions"} />
     </div>
   );
