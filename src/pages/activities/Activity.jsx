@@ -1,5 +1,5 @@
 import styles from "../../styles/pages/Activity.module.scss";
-
+import Loader from "../../components/loader";
 import CardList from "../../components/cardList/CardList";
 
 import { useEffect, useState } from "react";
@@ -36,18 +36,21 @@ export default function Activity() {
     <div className={styles.Activity}>
       {searchedParam ? (
         <div>
-          {searchedActivities(dataList, searchedParam).length !== 0 ? (
+          {dataList.length == 0 && <Loader />}
+
+          {searchedActivities(dataList, searchedParam).length !== 0 && (
             <div>
               <h3 className={styles.category}>Results:</h3>
               <CardList
                 dataList={searchedActivities(dataList, searchedParam)}
               />
             </div>
-          ) : (
+          )}
+          {searchedActivities(dataList, searchedParam).length == 0 && (
             <div className={styles.noMatchSection}>
               <div className={styles.noMatchSectionText}>
                 <h3 className={styles.category}>
-                  Sorry, no matching results , try again...
+                  Sorry, no matching results, try again...
                 </h3>
                 <Link to="/" className={styles.backBtn}>
                   <BiArrowBack />
@@ -64,7 +67,8 @@ export default function Activity() {
       ) : (
         <div>
           <h3 className={styles.category}>Activities</h3>
-          <CardList dataList={dataList} route={"/activities"} />{" "}
+          {dataList.length == 0 && <Loader />}
+          <CardList dataList={dataList} route={"/activities"} />
         </div>
       )}
     </div>

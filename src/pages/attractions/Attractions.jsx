@@ -2,6 +2,7 @@ import styles from "../../styles/pages/Attractions.module.scss";
 import { useEffect, useState } from "react";
 import { GET } from "../../utils/http";
 import CardList from "../../components/cardList/CardList";
+import Loader from "../../components/loader";
 
 export default function Attractions() {
   const [attractionsList, setAttractionsList] = useState([]);
@@ -15,6 +16,7 @@ export default function Attractions() {
   return (
     <div className={styles.Attractions}>
       <h3 className={styles.generalTitle}>Attractions</h3>
+      {attractionsList.length == 0 && <Loader />}
       <CardList dataList={attractionsList} route={"/attractions"} />
     </div>
   );

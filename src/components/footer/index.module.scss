@@ -1,9 +1,6 @@
 .Footer {
-  // @include flex(column, 0, nowrap, space-around, flex-start);
-  //PROVVISORIO
-  // position: absolute;
-  // bottom: 0;
-  width: 100%;
+  position: absolute;
+  bottom: 0;
   background-color: $secundary-color;
   box-shadow: 4px 0px 4px 4px;
   position: relative;
@@ -38,7 +35,7 @@
     }
   }
 }
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: 380px) {
   ul {
     text-align: center;
   }

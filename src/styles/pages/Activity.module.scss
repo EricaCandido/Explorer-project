@@ -5,16 +5,28 @@
   .category {
     font-weight: $font-weight-bold;
     padding-bottom: 20px;
+    text-align: center;
   }
   .backBtn {
     font-size: 2rem;
   }
   .noMatchSection {
+    padding-right: 50px;
+    width: 100vw;
+    @include flex();
     .noMatchSectionText {
-      @include flex(row, 0, nowrap, space-between);
+      // width: 100%;
+
+      @include flex(row, 30px, wrap, space-evenly);
     }
     .nomatchImg {
       max-width: 500px;
+      @media screen and (max-width: $tablet) {
+        max-width: 300px;
+      }
+      @media screen and (max-width: $mobile) {
+        max-width: 250px;
+      }
     }
   }
 }

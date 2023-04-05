@@ -65,7 +65,7 @@
   }
 }
 
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: 380px) {
   .App {
     .header {
       @include flex(column, 10px);

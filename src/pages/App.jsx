@@ -17,7 +17,6 @@ export default function App() {
   };
   return (
     <div className={styles.App}>
-      <Loader />
       <div className={styles.header}>
         <h1 className={styles.generalTitle}>Ireland</h1>
         <form onSubmit={onHandleSubmit}>

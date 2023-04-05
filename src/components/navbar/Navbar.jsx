@@ -12,18 +12,18 @@ const Navbar = () => {
           <Link to="/">
             <p className={styles.icon}>
               <AiTwotoneHome />
-            </p>{" "}
+            </p>
             <p className={styles.literal}>Home</p>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/accomodations">
             <p className={styles.icon}>
               <FaHotel />
             </p>
             <p className={styles.literal}>Accomodation</p>
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link to="/activities">
             <p className={styles.icon}>
