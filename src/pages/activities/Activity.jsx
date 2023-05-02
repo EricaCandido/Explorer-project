@@ -37,7 +37,6 @@ export default function Activity() {
 
   return (
     <div className={styles.Activity}>
-      {console.log(searchedParam)}
       {searchedParam ? (
         <div>
           {loaderState && <Loader />}
