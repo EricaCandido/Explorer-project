@@ -1,0 +1,35 @@
+.Hero {
+  width: 100%;
+  position: relative;
+  @include tablet {
+    height: 400px;
+  }
+  @include desktop {
+    height: 450px;
+  }
+  .heroImg {
+    width: 100%;
+    @include tablet {
+      height: 400px;
+    }
+    @include desktop {
+      height: 450px;
+    }
+  }
+  h3 {
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-family: $impressive-font;
+    font-size: 2rem;
+    color: $dark;
+    background-color: rgba(255, 255, 255, 0.485);
+    @include tablet {
+      font-size: 2.8rem;
+    }
+    @include desktop {
+      font-size: 3.5rem;
+    }
+  }
+}

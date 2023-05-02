@@ -6,17 +6,22 @@ import Loader from "../../components/loader";
 
 export default function Attractions() {
   const [attractionsList, setAttractionsList] = useState([]);
+  const [loaderState, setLoaderState] = useState(false);
 
   useEffect(() => {
+    setLoaderState(true);
     GET("https://failteireland.azure-api.net/opendata-api/v1/attractions").then(
-      (data) => setAttractionsList(data.results)
+      (data) => {
+        setAttractionsList(data.results);
+        setLoaderState(false);
+      }
     );
   }, []);
 
   return (
     <div className={styles.Attractions}>
       <h3 className={styles.generalTitle}>Attractions</h3>
-      {attractionsList.length == 0 && <Loader />}
+      {loaderState && <Loader />}
       <CardList dataList={attractionsList} route={"/attractions"} />
     </div>
   );

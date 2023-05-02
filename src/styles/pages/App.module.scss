@@ -1,13 +1,16 @@
 .App {
   @include flex(column, 20px);
+
   .header {
+    padding: 0 20px;
+
     width: 100%;
     @include flex(row);
-    .generalTitle {
-      width: 100%;
-      text-align: left;
-      font-weight: $font-weight-bold;
-    }
+    // .generalTitle {
+    //   width: 100%;
+    //   text-align: left;
+    //   font-weight: $font-weight-bold;
+    // }
     form {
       @include flex(row);
       box-shadow: 4px 4px 4px;
@@ -19,63 +22,54 @@
       }
     }
   }
-  .intro,
-  .culture,
-  .people {
-    @include flex(row, 20px, nowrap, center, flex-start);
-    background-color: rgba(255, 255, 255, 0.485);
-    position: relative;
+  .wrapper {
     padding: 20px;
-  }
-
-  .text {
-    width: 60%;
-    // height: 100%;
-    padding: 10px;
-    @include flex(column, 20px);
-
-    .title {
-      font-weight: $font-weight-bold;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  .homeImg {
-    height: 100%;
-    width: 40%;
-  }
-}
-
-@media screen and (max-width: $tablet) {
-  .App {
+    position: relative;
+    @include flex(column, 20px, wrap, center, center);
     .intro,
     .culture,
     .people {
-      @include flex(row, 20px, wrap);
-    }
-
-    .text {
-      width: 100%;
-    }
-
-    .homeImg {
-      width: 380px;
-    }
-  }
-}
-
-@media screen and (max-width: 380px) {
-  .App {
-    .header {
-      @include flex(column, 10px);
-
-      .generalTitle {
-        text-align: center;
+      @include flex(column, 20px, nowrap, center, center);
+      background-color: rgba(255, 255, 255, 0.485);
+      padding: 20px;
+      @include tablet {
+        @include flex(row, 10px, nowrap, center, flex-start);
       }
-    }
-    .homeImg {
-      width: 200px;
+
+      .text {
+        padding: 10px;
+        @include flex(column, 20px);
+
+        .title {
+          font-weight: $font-weight-bold;
+          width: 100%;
+          text-align: left;
+        }
+      }
+
+      .homeImg {
+        width: 100%;
+
+        @include tablet {
+          width: 40%;
+          // max-width: 200px;
+        }
+      }
+
+      .readBtn {
+        font-weight: $font-weight-bold;
+        font-size: 1.2rem;
+        border: none;
+        padding: 5px;
+        box-shadow: 4px 4px 4px;
+        background-color: $secundary-color;
+        cursor: pointer;
+        transition: transform (0.35s);
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
     }
   }
 }

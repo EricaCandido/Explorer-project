@@ -2,7 +2,7 @@
   border: 1px solid $secundary-color;
   box-shadow: 4px 4px 4px;
   width: 250px;
-  height: 500px;
+  height: 450px;
   padding: 10px 30px 60px 30px;
   @include flex(column, 5px, nowrap, flex-start);
   position: relative;
@@ -28,6 +28,7 @@
       font-size: 0.8rem;
       @include flex(row, 8px, wrap, flex-start, flex-start);
       li {
+        text-align: center;
         background-color: $secundary-color-light;
         box-shadow: 4px 4px 4px;
       }

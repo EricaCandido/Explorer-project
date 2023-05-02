@@ -1,19 +1,55 @@
+.notAvailable {
+  width: 100%;
+  padding: 100px;
+  font-weight: bold;
+  font-size: 2rem;
+  color: $secundary-color-dark;
+  text-align: center;
+}
 .Id {
-  @include flex(row, 20px);
+  margin: 20px;
+  @include flex(column, 20px);
+  @include desktop {
+    @include flex(row, 20px, nowrap, flex-start);
+  }
 
   img {
-    width: 400px;
+    width: 100%;
+
+    @include desktop {
+      width: 30%;
+    }
   }
   .text {
-    @include flex(column, 20px, no wrap, center, flex-start);
+    @include flex(column, 20px, nowrap, center, flex-start);
     position: relative;
-    width: 400px;
 
+    .title {
+      color: $primary-color-dark;
+      font-weight: bold;
+      text-align: center;
+    }
+    .categories {
+      @include flex(row, 10px, wrap, flex-start);
+      .category {
+        text-align: center;
+        background-color: $secundary-color-light;
+        box-shadow: 4px 4px 4px;
+      }
+    }
     .officialSite {
-      background-color: $secundary-color-light;
+      font-weight: $font-weight-bold;
+      font-size: 1.2rem;
+
       padding: 5px;
-      box-shadow: 4px 4px 4px 0.5px;
+      box-shadow: 4px 4px 4px;
+      background-color: $secundary-color;
       cursor: pointer;
+      transition: transform (0.35s);
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     .price {

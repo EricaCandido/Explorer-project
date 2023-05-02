@@ -1,9 +1,15 @@
 .Navbar {
-  padding: 20px;
+  padding: 0 20px;
   background-color: $primary-color;
   box-shadow: 4px 4px 4px;
   z-index: 10;
-  // width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .logo {
+    width: 70px;
+    height: 70px;
+  }
 
   .wrapper {
     @include flex(row, 50px, nowrap, flex-end);

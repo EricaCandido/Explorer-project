@@ -11,12 +11,11 @@ import { BiArrowBack } from "react-icons/bi";
 
 export default function Activity() {
   const [dataList, setDataList] = useState([]);
-
+  const [loaderState, setLoaderState] = useState(false);
   const [searchParams] = useSearchParams();
 
   const searchedActivities = (list, param) =>
     list.filter((item) => isTagged(item.tags, param));
-
   const isTagged = (listaditag, param) =>
     listaditag
       .toString()
@@ -27,18 +26,23 @@ export default function Activity() {
   const searchedParam = searchParams.get("activity")?.toLowerCase();
 
   useEffect(() => {
+    setLoaderState(true);
     GET("https://failteireland.azure-api.net/opendata-api/v1/activities").then(
-      (data) => setDataList(data.results)
+      (data) => {
+        setDataList(data.results);
+        setLoaderState(false);
+      }
     );
   }, []);
 
   return (
     <div className={styles.Activity}>
+      {console.log(searchedParam)}
       {searchedParam ? (
         <div>
-          {dataList.length == 0 && <Loader />}
+          {loaderState && <Loader />}
 
-          {searchedActivities(dataList, searchedParam).length !== 0 && (
+          {searchedActivities(dataList, searchedParam).length != 0 && (
             <div>
               <h3 className={styles.category}>Results:</h3>
               <CardList
@@ -46,28 +50,30 @@ export default function Activity() {
               />
             </div>
           )}
-          {searchedActivities(dataList, searchedParam).length == 0 && (
-            <div className={styles.noMatchSection}>
-              <div className={styles.noMatchSectionText}>
-                <h3 className={styles.category}>
-                  Sorry, no matching results, try again...
-                </h3>
-                <Link to="/" className={styles.backBtn}>
-                  <BiArrowBack />
-                </Link>
+          {!loaderState &&
+            searchedActivities(dataList, searchedParam).length == 0 && (
+              <div className={styles.noMatchSection}>
+                <div className={styles.noMatchSectionText}>
+                  <h3 className={styles.category}>
+                    Sorry, no matching results, try again...
+                  </h3>
+                  <Link to="/" className={styles.backBtn}>
+                    <BiArrowBack />
+                  </Link>
+                </div>
+                <img
+                  className={styles.nomatchImg}
+                  src="https://www.planetware.com/wpimages/2019/09/ireland-in-pictures-most-beautiful-places-to-visit-derry.jpg"
+                  alt="Derry img"
+                />
               </div>
-              <img
-                className={styles.nomatchImg}
-                src="https://www.planetware.com/wpimages/2019/09/ireland-in-pictures-most-beautiful-places-to-visit-derry.jpg"
-                alt="Derry img"
-              />
-            </div>
-          )}
+            )}
         </div>
       ) : (
         <div>
           <h3 className={styles.category}>Activities</h3>
-          {dataList.length == 0 && <Loader />}
+
+          {loaderState && <Loader />}
           <CardList dataList={dataList} route={"/activities"} />
         </div>
       )}

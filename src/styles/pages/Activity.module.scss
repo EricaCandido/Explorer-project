@@ -1,6 +1,8 @@
 .Activity {
-  // height: 100vh; ///PROVVISORIO
-  @include flex(column, 20px, nowrap, center, flex-start);
+  padding: 50px 0;
+  @include desktop {
+    padding: 50px;
+  }
 
   .category {
     font-weight: $font-weight-bold;

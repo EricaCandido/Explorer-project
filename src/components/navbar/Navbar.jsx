@@ -2,11 +2,15 @@ import styles from "./index.module.scss";
 import { Link } from "react-router-dom";
 import { AiTwotoneHome } from "react-icons/ai";
 import { MdLocalActivity, MdAttractions } from "react-icons/md";
-import { FaHotel } from "react-icons/fa";
+// import { FaHotel } from "react-icons/fa";
+import logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
     <div className={styles.Navbar}>
+      <Link to="/">
+        <img className={styles.logo} src={logo} alt="logo" />
+      </Link>
       <ul className={styles.wrapper}>
         <li>
           <Link to="/">

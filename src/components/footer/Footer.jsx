@@ -34,12 +34,12 @@ const Footer = () => {
         </ul>
 
         <ul className={styles.cities}>
-          <h3>Recommended cities</h3>
-          <li>Milano</li>
-          <li>Roma</li>
-          <li>Madrid</li>
-          <li>Parigi</li>
-          <li>Amsterdam</li>
+          <h3>Recommended places</h3>
+          <li>The Lakes Of Killarney</li>
+          <li>Lynch's Castle</li>
+          <li>Lower Lough Avaul</li>
+          <li>Upper Lake Killarney</li>
+          <li>Cork City Library</li>
         </ul>
       </div>
       <p>Created by Erica Candido</p>
